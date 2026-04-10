@@ -1,0 +1,31 @@
+package activity1;
+import java.time.LocalDate;
+public class Employee {
+     int employeeId;
+     String name;
+     LocalDate hireDate;
+     LocalDate birthDate;
+     double salary;
+     Phone phone;// هذه علاقة تكوين بين الموظف والتلفون بحيث كل موظف يجب ان يكون لديه تلفون
+     Adderss addr;// هذه علاقة تكوين بين الموظف والعنوان بحيث كل موظف يجب ان يسجل عنوانه
+
+    public Employee(int employeeId, String name, LocalDate hireDate, int year,int month,int day, double salary,String country,String city,String street,int phone) {
+        this.employeeId = employeeId;
+        this.name = name;
+        LocalDate in=LocalDate.of(year, month,day);
+        this.hireDate = LocalDate.now();
+        this.birthDate = in;
+        this.salary = salary;
+        this.phone = new Phone(phone);
+        this.addr = new Adderss(country,city,street);
+    }     
+void print_Employee(){
+    System.out.println("The Employee name is :: "+name);
+    System.out.println("The Employee ID is :: "+employeeId);
+    System.out.println("The Employee date of creat is :: "+hireDate);
+    System.out.println("The Employee birthdate is :: "+birthDate);
+    System.out.println("The Employee salary is :: "+salary);
+    System.out.println("The Employee phone number is :: "+phone.phone_Number);
+    System.out.println("The Employee Address is :: "+addr.country+addr.city+addr.street);
+}
+}

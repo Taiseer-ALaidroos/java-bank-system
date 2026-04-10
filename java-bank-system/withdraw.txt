@@ -1,0 +1,20 @@
+package activity1;
+import java.time.LocalDate;
+
+public class Withdraw {
+    double cash;
+    int accountId;
+  LocalDate WIthdrawDate=LocalDate.now();
+
+    public Withdraw(double cash, int accountId) {
+        this.cash = cash;
+        this.accountId = accountId;
+    }
+
+  void print_withdraw(){
+        System.out.println("The cash is given..:: "+cash);
+        System.out.println("The account Id is ..:: "+accountId);
+        System.out.println("The withdraw dats  in ..:: "+WIthdrawDate);
+    }
+
+}

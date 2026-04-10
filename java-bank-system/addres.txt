@@ -1,0 +1,18 @@
+package activity1;
+public class Adderss {
+    String country;
+    String city;
+    String street;
+
+    public Adderss(String country, String city, String street) {
+        this.country = country;
+        this.city = city;
+        this.street = street;
+    }
+void Print_Address(){
+    System.out.println("the country :: "+country);
+    System.out.println("the city :: "+city);
+    System.out.println("the street :: "+street);
+}
+    
+}

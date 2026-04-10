@@ -1,0 +1,88 @@
+package activity1;
+import java.util.ArrayList;
+public class Bank {
+    String BankName;
+    ArrayList<Customer>customers;
+    ArrayList<Teller>tellers;
+    ArrayList<Manager>managers;
+    ArrayList<Account>accounts;
+    ArrayList<Loan>loans;
+    ArrayList<Branch>branchs;
+    ArrayList<Deposit>deposits;
+    ArrayList<Withdraw>withdraws;
+    ArrayList<Card>cards;
+    ArrayList<ATM>atms;
+    
+    public Bank(String BankName) {
+        this.BankName = BankName;
+        this.customers=new ArrayList<>();
+        this.tellers=new ArrayList<>();
+        this.managers=new ArrayList<>();
+        this.accounts=new ArrayList<>();
+        this.loans=new ArrayList<>();
+        this.branchs=new ArrayList<>();
+        this.deposits=new ArrayList<>();
+        this.withdraws=new ArrayList<>();
+        this.cards=new ArrayList<>();
+        this.atms=new ArrayList<>();
+    }
+    
+ 
+    public void addTeller(Teller teller){
+        tellers.add(teller);
+        System.out.println("Employee is added..");
+    }
+    public void addManager(Manager manager){
+        managers.add(manager);
+        System.out.println("Employee is added..");
+    }   
+    public void addcustomer(Customer cUstomer)
+    {
+        customers.add(cUstomer);
+        System.out.println("customer is added..");
+
+    }
+     public void addaccount(Account accOunt)
+    {
+        accounts.add(accOunt);
+        System.out.println("Account is added..");
+
+    }
+      public void addloan(Loan loan)
+    {
+        loans.add(loan);
+        System.out.println("Loan is added..");
+
+    }
+      public void addCard(Card card)
+    {
+        cards.add(card);
+        System.out.println("card is added..");
+
+    }
+       public void addATM(ATM atm)
+    {
+        atms.add(atm);
+        System.out.println("card is added..");
+
+    }
+       public void addbranches(Branch brAnch)
+    {
+        branchs.add(brAnch);
+        System.out.println("Branch is added..");
+
+    }
+    public void addDeposit(Deposit deposit)
+    {
+        deposits.add(deposit);
+        System.out.println("The deposit is added..");
+
+    }
+    public void addWithdraw(Withdraw withdraw)
+    {
+        withdraws.add(withdraw);
+        System.out.println("the withdraw is added..");
+
+    }    
+    
+}

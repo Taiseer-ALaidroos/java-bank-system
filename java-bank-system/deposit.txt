@@ -1,0 +1,21 @@
+package activity1;
+import java.time.LocalDate;
+public class Deposit {
+  double cash;
+  int accountId;
+  LocalDate DeposDate=LocalDate.now();
+
+    public Deposit(double cash, int accountId) {
+        this.cash = cash;
+        this.accountId = accountId;
+     
+    }
+    void print_Deposit(){
+        System.out.println("The cash is given..:: "+cash);
+        System.out.println("The account Id is ..:: "+accountId);
+        System.out.println("The deposit in ..:: "+DeposDate);
+    }
+
+   
+  
+}

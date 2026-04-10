@@ -1,0 +1,23 @@
+package activity1;
+import java.time.LocalDate;
+import java.util.List;
+public class Manager extends Employee {
+     String department;
+
+    public Manager(String department, int employeeId, String name, LocalDate hireDate, int year, int month, int day, double salary, String country, String city, String street, int phone) {
+        super(employeeId, name, hireDate, year, month, day, salary, country, city, street, phone);
+        this.department = department;
+    }
+
+   void print_Employee(){
+    System.out.println("The Employee ID::"+employeeId);
+    System.out.println("The Employee Name::"+name);
+    System.out.println("The HireDate is ::"+hireDate);
+    System.out.println("The Employee birthdate::"+birthDate);
+    System.out.println("The Employee Salary::"+salary);
+    System.out.println("The Employee Address::"+addr.country+addr.city+addr.street);
+    System.out.println("The Employee phone_number::"+phone.phone_Number);
+    System.out.println("The Employee works in ::"+department);
+}
+  
+}

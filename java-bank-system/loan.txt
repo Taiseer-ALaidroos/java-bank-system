@@ -1,0 +1,43 @@
+package activity1;
+import java.time.LocalDate;
+public class Loan {
+   String customer_name;
+   int customer_Id;
+   int Loan_Id;
+   double loan_cash;
+   LocalDate todayDate=LocalDate.now();
+   LocalDate Loan_period=todayDate.plusYears(1);
+
+    public Loan(String customer_name, int customer_Id, int Loan_Id, double loan_cash) {
+        this.customer_name = customer_name;
+        this.customer_Id = customer_Id;
+        this.Loan_Id = Loan_Id;
+        this.loan_cash = loan_cash;
+    }
+    
+public void print_Loan(){
+    System.out.println("customer_name..."+customer_name);
+    System.out.println("customer_Id.."+customer_Id);
+    System.out.println("Loan_Id.."+Loan_Id);
+    System.out.println("loan_cash.."+loan_cash);
+    System.out.println("the Loan_period is.."+Loan_period);
+   }
+}
+// شغل سابق لم تعد له فائدة
+//   while (true)
+//        {
+//        LocalDate input_Date=LocalDate.of(year, month, day);
+//        this.loan_period = loan_period;
+//        LocalDate today=LocalDate.now();
+//        if(input_Date.isAfter(today))
+//        {this.loan_period=input_Date;break;}
+//        else
+//        {
+//        System.out.println("that is error date...try again");
+//        System.out.println("please enter the year");
+//        year=s.nextInt();
+//        System.out.println("please enter the month");
+//        month=s.nextInt();
+//        System.out.println("please enter the day");
+//        day=s.nextInt();
+//        }

@@ -1,0 +1,400 @@
+package activity1;
+import java.time.LocalDate;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args)
+    {
+Scanner s=new Scanner(System.in);
+System.out.println("Please...Enter your name..\n");
+String User_Name=s.nextLine();
+boolean Control_program=true;
+while(Control_program==true)
+{
+System.out.println("<<.....Hello .."+ User_Name+"..welcom in our simple Bank...>>\n\n"+
+"please choose by number in this range(1-8) الرجاء الادخال بواسطة الرقم\n" +
+"1- add a new customer...اضافة عميل\n" +
+"2- add a new Employee.. اضافة موظف\n" +
+"3- add a new branch... اضافة فرع\n" +
+"4- add a new account.. اضافة حساب\n" +
+"5- add a new loan... اضافة قرض\n" +
+"6- Do deposite for account.. عملية ايداع لحساب\n" +
+"7- Do withdraw from account.. عملية سحب من حساب\n"+
+"8- Exit from Program....");
+int opinion_user=s.nextInt();
+switch(opinion_user){
+case 1:
+{//Customer: 
+while (true) 
+{     Add_customer(); 
+     System.out.println("_________________________________________");
+     System.out.println("if you want add another one press 1..\n"
+            + "ComeBack to The mainScreen press 0\n");
+int choice_run_program=s.nextInt();
+if(choice_run_program==0)  
+{
+    break;
+}
+}
+break;
+}
+case 2:
+{//Employee:
+ while (true) 
+{        
+ Add_Employee();
+ System.out.println("_________________________________________");
+     System.err.println("if you want add another one press 1..\n"
+            + "comeBack to The mainScreen press 0\n");
+int choice_run_program=s.nextInt();
+if(choice_run_program==0)  
+{
+    break;
+}
+}
+ break; 
+}
+case 3:
+{//Branch:
+ while (true) 
+{        
+     Add_Branch();
+     System.out.println("_________________________________________");
+     System.err.println("if you want add another one press 1..\n"
+            + "comeBack to The mainScreen press 0\n");
+int choice_run_program=s.nextInt();
+if(choice_run_program==0)  
+{
+    break;
+}
+}
+break;
+}
+case 4:
+{//account:
+while (true) 
+{        
+     Add_Account();
+     System.out.println("_________________________________________");
+     System.err.println("if you want add another one press 1..\n"
+            + "comeBack to The mainScreen press 0\n");
+int choice_run_program=s.nextInt();
+if(choice_run_program==0)  
+{
+    break;
+}
+}
+break;
+}
+case 5:
+{//loan:
+while (true) 
+{        
+     Add_Loan();
+     System.out.println("_________________________________________");
+     System.err.println("if you want add another one press 1..\n"
+            + "comeBack to The mainScreen press 0\n");
+int choice_run_program=s.nextInt();
+if(choice_run_program==0)  
+{
+    break;
+}
+}
+break;
+}
+case 6:
+{//Deposit:   ايداع
+while (true) 
+{         
+Do_Deposite();
+System.out.println("_________________________________________");
+     System.err.println("if you want add another one press 1..\n"
+            + "comeBack to The mainScreen press 0\n");
+int choice_run_program=s.nextInt();
+if(choice_run_program==0)  
+{
+    break;
+}
+}
+break;
+}
+case 7:
+{//Withdraw:   سحب
+while (true) 
+{        
+     Do_Withdraw();
+     System.out.println("_________________________________________");
+     System.err.println("if you want add another one press 1..\n"
+            + "comeBack to The mainScreen press 0\n");
+int choice_run_program=s.nextInt();
+if(choice_run_program==0)  
+{
+    break;
+}
+}
+break;
+}
+case 8:
+{System.out.println("Good bye my dear.... "+User_Name);Control_program=false;break; }
+}
+}
+    }
+public static void Add_customer(){
+Scanner s=new Scanner(System.in);
+//s.nextLine();
+System.out.println("please..Enter The customer name :: \n");
+String name=s.nextLine();
+System.out.println("please..Enter  The customer age it should be bigger or equal 18...:: \n");
+int age=s.nextInt();
+while (true) {            
+        if(age>=18)
+        {        
+        break;
+        }
+        else
+        {
+            System.out.println("the age is not avalible...");
+            System.out.println("please..enter again..");
+            age=s.nextInt();
+        }
+}
+System.out.println("please..Enter  The customer ID :: \n");
+int Id=s.nextInt();
+System.out.println("please..Enter  The customer addres {country} :: \n");
+s.nextLine();//.... عشان الفراغ...
+String Country=s.nextLine();
+System.out.println("please..Enter The customer addres {city} :: \n");
+String City=s.nextLine();
+System.out.println("please..Enter The customer addres {street} :: \n");
+String Street=s.nextLine();
+System.out.println("please..Enter The customer phone :: \n");
+int x=5;
+int phone_Number=s.nextInt();
+         while(x>=1) 
+        {
+            if (phone_Number>=730000000&&phone_Number<=739999999)
+            { System.out.println("Thanks.....your phone number is # YOU # ");
+             break;
+            }
+            else if(phone_Number>=710000000&&phone_Number<=719999999)
+            { System.out.println("Thanks.....your phone number is # SPAFON # ");
+             break;}
+            else if(phone_Number>=770000000&&phone_Number<=789999999) 
+            { System.out.println("Thanks.....your phone number is # YEMEN_MOBOILE# ");
+             break;}
+            else if(phone_Number>=700000000&&phone_Number<=709999999) 
+            { System.out.println("Thanks.....your phone number is #WAY# ");
+             break;}
+        
+            else
+           {
+               System.out.println("you entered wrong number .. please enter again\n"+"the number of attempts left.. "+x);
+               phone_Number=s.nextInt();
+           }
+            x--;
+    }
+
+Customer nCustomer=new Customer(name,age,Id,Country,City,Street,phone_Number);
+Bank bank=new Bank("Hopeful");
+bank.addcustomer(nCustomer);
+System.out.println("The process is succesful..\n\n");
+
+nCustomer.prind_customer();
+}
+static void Add_Employee(){
+Scanner s=new Scanner(System.in);
+Bank bank=new Bank("Hopeful");
+s.nextLine();
+System.out.println("please enter the type of employee.. ::\n if teller press 1 ,, if another press any number::\n");
+int TypeEmployee=s.nextInt();
+System.out.println("please enter the id of employee.. ::");
+int employeeId=s.nextInt();
+System.out.println("please enter the name of employee.. ::");
+s.nextLine();//.... عشان الفراغ...
+String name=s.nextLine();
+System.out.println("please enter the year of birthdate of employee.. ::");
+int year=s.nextInt();
+System.out.println("please enter the month of birthdate of employee.. ::");
+int month=s.nextInt();
+System.out.println("please enter the day of birthdate of employee.. ::");
+int day=s.nextInt();
+System.out.println("please enter the salary of employee.. ::");
+double salary=s.nextDouble();
+System.out.println("please..Enter  The Employee addres {country} :: \n");
+s.nextLine();//.... عشان الفراغ...
+String Country=s.nextLine();
+System.out.println("please..Enter The Employee addres {city} :: \n");
+String City=s.nextLine();
+System.out.println("please..Enter The Employee addres {street} :: \n");
+String Street=s.nextLine();
+System.out.println("please..Enter The Employee phone :: \n");
+int x=5;
+int phone_Number=s.nextInt();
+         while(x>=1) 
+        {
+            if (phone_Number>=730000000&&phone_Number<=739999999)
+            { System.out.println("Thanks.....your phone number is # YOU # ");
+             break;
+            }
+            else if(phone_Number>=710000000&&phone_Number<=719999999)
+            { System.out.println("Thanks.....your phone number is # SPAFON # ");
+             break;}
+            else if(phone_Number>=770000000&&phone_Number<=789999999) 
+            { System.out.println("Thanks.....your phone number is # YEMEN_MOBOILE# ");
+             break;}
+            else if(phone_Number>=700000000&&phone_Number<=709999999) 
+            { System.out.println("Thanks.....your phone number is #WAY# ");
+             break;}
+        
+            else
+           {
+               System.out.println("you entered wrong number .. please enter again\n"+"the number of attempts left.. "+x);
+               phone_Number=s.nextInt();
+           }
+            x--;
+    }
+LocalDate hireDate=LocalDate.now();
+if (TypeEmployee ==1)
+{
+    System.out.println("please enter the shift of employee.. ::\n if It is in the morning press 1  else 0.. ::\n");
+    int type_shift=s.nextInt();
+    if (type_shift==1)
+    {
+    String shift="morning";
+Teller newTaller=new Teller(shift, employeeId, name, hireDate, year, month, day, salary, Country, City, Street, phone_Number);
+    newTaller.print_Employee();
+    bank.addTeller(newTaller);
+    }
+
+    else if(type_shift==0)
+    {String shift="Evining";
+    Teller newTaller=new Teller(shift, employeeId, name, hireDate, year, month, day, salary, Country, City, Street, phone_Number);
+    newTaller.print_Employee();
+    bank.addTeller(newTaller);
+
+    }}
+else  
+{   System.out.println("please enter thee department.. :: \n");
+    s.nextLine();
+    String department=s.nextLine();
+    Manager newManager=new Manager(department, employeeId, name, hireDate, year, month, day, salary, Country, City, Street, phone_Number);
+    newManager.print_Employee();
+    bank.addManager(newManager);
+}
+System.out.println("The process is succesful..\n\n");
+}
+static void Add_Branch(){
+Scanner s=new Scanner(System.in);
+Bank bank=new Bank("Hopeful");
+s.nextLine();  
+System.out.println("please enter the Id of branch.. ::");
+int branchId=s.nextInt();
+System.out.println("please enter the location of branch.. ::");
+s.nextLine();
+String location=s.nextLine();
+System.out.println("please enter the ID of ATM.. ::");
+int ATM_ID=s.nextInt();
+System.out.println("please enter the available cash of ATM machine.. ::");
+int Available_cash=s.nextInt();
+Branch newBranch=new Branch(branchId, location, ATM_ID, Available_cash);
+ATM atm=new ATM(ATM_ID, Available_cash);
+System.out.println("The process is succesful..\n\n");
+newBranch.print_Branch();
+bank.addbranches(newBranch);
+bank.addATM(atm);
+}
+static void Add_Account(){
+Scanner s=new Scanner(System.in);
+Bank bank=new Bank("Hopeful");
+s.nextLine();    
+System.out.println("please enter your IdAccount.. ::");
+int accountId=s.nextInt();
+System.out.println("please enter your Idcustomer.. ::");
+int customerId=s.nextInt();
+System.out.println("please enter your balance.. ::");
+double balance=s.nextDouble();
+System.out.println("please enter your password.. ::");
+s.nextLine();
+String password=s.nextLine();
+System.out.println("please enter your Id_Card.. ::");
+int cardId=s.nextInt();
+System.out.println("please enter your securitypin of the card in 4 numbers only .. ::");
+int security_Pin=s.nextInt();
+Account newAccount=new Account(accountId, customerId, balance, password, cardId, security_Pin);
+Card nCard=new Card(cardId, security_Pin);
+System.out.println("The process is succesful..\n\n");
+newAccount.print_Account();
+bank.addaccount(newAccount);
+bank.addCard(nCard);
+}
+static void Add_Loan(){
+Scanner s=new Scanner(System.in); 
+Bank bank=new Bank("Hopeful");
+s.nextLine();
+System.out.println("please enter the name of customer");
+String customer_name=s.nextLine();
+System.out.println("please enter the Id of the customer");
+int customer_Id=s.nextInt();
+System.out.println("please enter the Id of the Loan");
+int Loan_Id=s.nextInt();
+System.out.println("please enter the cash that you want to loan");
+double loan_cash=s.nextDouble();
+Loan newLoan=new Loan(customer_name, customer_Id, Loan_Id, loan_cash);
+System.out.println("The process is succesful..\n\n");
+newLoan.print_Loan();
+bank.addloan(newLoan);
+}
+static void Do_Deposite(){
+Scanner s=new Scanner(System.in);  
+Bank bank=new Bank("Hopeful");
+s.nextLine();    
+System.out.println("please... enter your account Id..");
+int accountId=s.nextInt();
+System.out.println("please...enter the cash that you want to enter it...");
+double cash=s.nextDouble();
+Deposit nDeposit=new Deposit(cash, accountId);
+System.out.println("The process is succesful..\n\n");
+nDeposit.print_Deposit();
+bank.addDeposit(nDeposit);
+}
+static void Do_Withdraw(){
+Scanner s=new Scanner(System.in);
+Bank bank=new Bank("Hopeful");
+s.nextLine();    
+System.out.println("If you want ATM press 1 ... if not press 0");
+int choice_ATM=s.nextInt();
+if(choice_ATM!=1){
+System.out.println("please... enter your account Id..");
+int accountId=s.nextInt();
+System.out.println("please...enter the cash that you want to take it...");
+int cash=s.nextInt();
+Withdraw nWithdraw=new Withdraw(cash, accountId);
+bank.addWithdraw(nWithdraw);
+System.out.println("Take your cash..["+cash+"]");}
+if(choice_ATM==1) 
+{
+System.out.println("please... enter your account Id..");
+int accountId=s.nextInt();
+System.out.println("please...enter the cash that you want to take it...");
+int cash=s.nextInt();
+Withdraw nWithdraw=new Withdraw(cash, accountId); 
+bank.addWithdraw(nWithdraw);
+System.out.println("please... enter your Card_id");
+int cardId=s.nextInt();
+System.out.println("please... enter you securityPin...");
+int securityPin=s.nextInt();
+Card nCard=new Card(cardId, securityPin);
+bank.addCard(nCard);
+ATM nAtm=new ATM(cash,nCard);
+boolean cheack_cash=nAtm.verifyCash();
+    if (cheack_cash)
+    {
+       System.out.println("Take your cash..["+cash+"]"); 
+    }
+    else 
+    {
+        System.out.println("the monye in the mechine is low..!!");
+    }
+}
+}
+}

@@ -1,0 +1,21 @@
+package activity1;
+import java.time.LocalDate;
+public class Card 
+{
+     int cardId;
+     LocalDate todayDate=LocalDate.now();
+     LocalDate expirationDate=todayDate.plusYears(1);
+     int securityPin;
+
+    public Card(int cardId, int securityPin) {
+        this.cardId = cardId;
+        this.securityPin = securityPin;
+       
+    }
+    void Print_Card(){
+        System.out.println("The Card Id is :: "+cardId);
+        System.out.println("The Card is creat in :: "+todayDate);
+        System.out.println("The Card will end in :: "+expirationDate);
+        System.out.println("The Card securityPin is  :: "+securityPin);
+    }
+}

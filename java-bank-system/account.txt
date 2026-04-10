@@ -1,0 +1,30 @@
+package activity1;
+import java.util.List;
+import java.time.LocalDate;
+public class Account {
+     int accountId;
+     int customerId;
+     double balance;
+     String password;
+     LocalDate dateCreated=LocalDate.now();
+     Card card;  // علاقة تكوين بحيث كل حساب يجب ان يكون لديه بطاقة: الحساب يملك بطاقة
+
+    public Account(int accountId, int customerId, double balance, String password, int cardId,int securityPin) {
+        this.accountId = accountId;
+        this.customerId = customerId;
+        this.balance = balance;
+        this.password = password;
+        this.card = new Card(cardId, securityPin);
+    }
+
+   void print_Account(){
+       System.out.println("accountId:: "+accountId);
+       System.out.println("customerId:: "+customerId);
+       System.out.println("balance:: "+balance);
+       System.out.println("password of account:: "+password);
+       System.out.println("date_created of account:: "+dateCreated);
+       System.out.println("cardId:: "+card.cardId);
+       System.out.println("securityPin:: "+card.securityPin);
+   }
+    
+}

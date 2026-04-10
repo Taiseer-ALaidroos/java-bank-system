@@ -1,0 +1,21 @@
+package activity1;
+public class ATM 
+{  int ATM_ID;
+   int available_cash;
+   int cash_withDrw;
+   Card card;// هناك علاقة agregation علاقة تركيب بين مكينة الصراف والبطاقة
+
+    public ATM(int ATM_ID, int available_cash) {
+        this.ATM_ID = ATM_ID;
+        this.available_cash = available_cash;
+    }
+   
+    public ATM(int cash_withDrw, Card card) {
+        this.cash_withDrw = cash_withDrw;
+        this.card = card;
+    }
+    // دالة تتحقق ما اذا كان المبلغ المسحوب او المطلوب موجود في المكينة ام لا
+    public boolean verifyCash(){
+   return cash_withDrw<=available_cash;
+    }
+}

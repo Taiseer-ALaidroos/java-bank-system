@@ -1,0 +1,17 @@
+package activity1;
+import java.util.List;
+public class Branch {
+     int branchId;
+     String location;
+     ATM atm;//علاقة تكوين بحيث ان كل فرع يجب ان يملك مكينة صراف الي
+     
+    public Branch(int branchId, String location,int ATM_ID,int available_cash) {
+        this.branchId = branchId;
+        this.location = location;
+        this.atm=new ATM(ATM_ID, available_cash);
+    }
+    void print_Branch(){
+        System.out.println("Branch Id is :: "+branchId);
+        System.out.println("Branch Location is :: "+location);
+    }
+}

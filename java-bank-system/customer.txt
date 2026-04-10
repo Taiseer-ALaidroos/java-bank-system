@@ -1,0 +1,30 @@
+package activity1;
+import java.util.Scanner;
+public class Customer {
+    Scanner s =new Scanner(System.in);
+    String name;
+    int age;
+    int ID_customer;
+    Phone phone;
+    Adderss addr;  
+   
+    public Customer(String name, int age, int ID_customer,String country,String city,String street,int phone) {
+        this.name = name;
+        this.addr = new Adderss(country,city,street);
+        this.age=age;
+        this.ID_customer = ID_customer;
+        this.phone = new Phone(phone);
+    }
+
+        
+    void prind_customer()
+    {   
+        System.out.println("The name : "+name);
+        System.out.println("The age : "+age);
+        System.out.println("The IDcard : "+ID_customer);
+        System.out.println("Phone number : "+phone.phone_Number);
+        System.out.println("The Address : "+addr.country+" - "+addr.city+" - "+addr.street);  
+    }
+    
+    
+}

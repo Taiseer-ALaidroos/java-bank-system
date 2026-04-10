@@ -1,0 +1,24 @@
+
+package activity1;
+
+import java.util.Scanner;
+
+public class Phone {
+     Scanner s =new Scanner(System.in);
+     int phone_Number;
+
+    public Phone(int phone_Number) {
+        this.phone_Number = phone_Number;
+    }
+    public void print_phone(){
+        System.out.println("the phone number is :: "+phone_Number);
+    }
+}
+
+     
+     
+     
+
+    
+   
+
